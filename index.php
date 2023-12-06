@@ -12,7 +12,8 @@
     <title><?= $tilte ?></title>
     <link rel="stylesheet" href="/public/css/output.css">
 </head>
-<body>
+<body class="h-96">
+    <?php include "./public/include/navbar.php" ?>
 
 </body>
 </html>
