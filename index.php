@@ -18,7 +18,6 @@
     <?php include "./public/include/navbar.php" ?>
 
     <!-- Hero -->
-    <!--#TicketID:waiting-->
 
     <?php include "./public/include/footer.php" ?>
 </body>
