@@ -15,7 +15,14 @@
     </div>
 
     <!-- Conteneur de droite login / register -->
-    <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900 hover:text-emerald-500 hover:scale-105 transition">Connexion <span aria-hidden="true">&rarr;</span></a>
-    </div>
+    <!-- Fait en sorte d'afficher le bouton de connexion quand l'utilisateur n'est pas connecter -->
+    <?php if (isset($_SESSION["user"])): ?>
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-900 hover:text-emerald-500 hover:scale-105 transition">Mon compte <span aria-hidden="true">&rarr;</span></a>
+        </div>
+    <?php else: ?>
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a href="/public/pages/login/index.php" class="text-sm font-semibold leading-6 text-gray-900 hover:text-emerald-500 hover:scale-105 transition">Connexion <span aria-hidden="true">&rarr;</span></a>
+        </div>
+    <?php endif; ?>
 </nav>
