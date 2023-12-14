@@ -22,7 +22,7 @@ if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["ema
             $stmt = $db->prepare($sql);
             $stmt->execute([$firstname, $lastname, $email, $passwordSecure]);
 
-            header("Location: ../login/index.php?success");
+            header("Location: ../login/index.php?success=1");
         } else {
             header("Location: ./index.php?error=3");
         }
