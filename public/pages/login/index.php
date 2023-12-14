@@ -4,6 +4,8 @@
     $title = "Connexion"
 ?>
 
+<!-- Prochaine étape -->
+
 <!doctype html>
 <html lang="fr">
 <head>
