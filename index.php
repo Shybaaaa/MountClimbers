@@ -1,7 +1,9 @@
 <?php
     session_start();
     require "private/functions/dbIni.php" ;
-    $title = "Galery"
+    $title = "Gallery";
+
+    global $db;
 ?>
 
 <!doctype html>
@@ -14,10 +16,14 @@
     <title><?= $title ?></title>
     <link rel="stylesheet" href="/public/css/output.css">
 </head>
-<body class="h-96">
+<body class="h-screen">
     <?php include "./public/include/navbar.php" ?>
 
-    <!-- Hero -->
+    <!-- Main -->
+
+
+    <div class="h-screen"></div>
+    <!-- End Main -->
 
     <?php include "./public/include/footer.php" ?>
 </body>

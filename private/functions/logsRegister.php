@@ -1,5 +1,5 @@
 <?php
-function logsRegister($typeLogs, $logsMessage) {
+function LogsRegister($typeLogs, $logsMessage) {
 
     /* Var $db de dbIni.php*/
     global $db;

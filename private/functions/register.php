@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . "/dbIni.php";
 global $db;
 
 $firstname = "";
@@ -21,6 +22,8 @@ if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["ema
             $sql = "INSERT INTO users (`firstname`, `lastname`, `email`, `password`) VALUES (?, ?, ?, ?)";
             $stmt = $db->prepare($sql);
             $stmt->execute([$firstname, $lastname, $email, $passwordSecure]);
+
+            LogsRegister("CREATE", "Compte créé avec l'email : {$email}");
 
             header("Location: ../login/index.php?success=1");
         } else {

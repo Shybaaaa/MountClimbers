@@ -1,10 +1,8 @@
 <?php
-session_start();
+    session_start();
+    require __DIR__ . "/../../../private/functions/register.php";
 
-require __DIR__ . "/../../../private/functions/dbIni.php";
-require __DIR__ . "/../../../private/functions/register.php";
-
-$title = "Connexion"
+    $title = "Connexion"
 ?>
 
 <!doctype html>
@@ -18,10 +16,18 @@ $title = "Connexion"
     <link rel="stylesheet" href="../../css/output.css">
 </head>
 <body>
-<!-- Alert Example a modifier et rendre a rendre automatique avec les erreurs de Création de compte -->
+<div class="fixed top-2 left-2">
+    <a href="/index.php" class="flex items-center h-5 p-4 text-gray-900 rounded-md hover:text-indigo-500 font-semibold  sm:w-fit sm:max-w-fit transition duration-200" role="button">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" class="flex-shrink-0 w-4 h-4 fill" viewBox="0 0 448 512">
+            <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+        </svg>
+        <div class="ms-2 text-sm font-medium">
+            Retour
+        </div>
+    </a>
+</div>
 <div class="flex flex-col h-screen justify-center items-center px-6 py-12 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-        <img class="mx-auto h-10 w-auto rounded" src="../../image/logo/android-chrome-512x512.png" alt="Galery">
         <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Création de compte</h2>
     </div>
 
@@ -41,10 +47,10 @@ $title = "Connexion"
                 break;
         }?>
         <div id="alert" class="flex mt-5 items-center p-4 text-red-800 rounded-lg bg-red-100 sm:mx-auto sm:w-full sm:max-w-sm " role="alert">
-            <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+            <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
+                <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/>
             </svg>
-            <span class="sr-only">Info</span>
+            <span class="sr-only">Error</span>
             <div class="ms-3 text-sm font-medium">
                 <?= $messageError?>
             </div>
