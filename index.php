@@ -1,7 +1,7 @@
 <?php
     session_start();
     require "private/functions/dbIni.php" ;
-    $title = "Gallery";
+    $title = "MountClimbers";
 
     global $db;
 ?>
