@@ -8,8 +8,8 @@ $email = "";
 $password = "";
 $password2 = "";
 
-if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["password2"])){
-    if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
+if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["password2"])) {
+    if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
         $firstname = htmlspecialchars($_POST["firstname"]);
         $lastname = htmlspecialchars($_POST["lastname"]);
         $email = htmlspecialchars($_POST["email"]);

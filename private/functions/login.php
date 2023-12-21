@@ -10,7 +10,7 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
     $mdpUser = htmlspecialchars($_POST["password"]);
 
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $sql = "SELECT users.email, users.firstname, users.lastname FROM users WHERE users.email = :emailConnection AND users.password = :mdpConnection AND users.isDelete = 0";
+        $sql = "SELECT users.email, users.firstname, users.lastname, users.role_level, users.photo_profile  FROM users WHERE users.email = :emailConnection AND users.password = :mdpConnection AND users.isDelete = 0";
         $stmt = $db->prepare($sql);
         $stmt->execute([
             'emailConnection' => $email,
@@ -19,11 +19,13 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
 
         $infoUser = $stmt->fetch();
 
-        if ($infoUser){
+        if ($infoUser) {
             $_SESSION["user"] = [
                 "email" => $infoUser["email"],
                 "firstname" => $infoUser["firstname"],
                 "lastname" => $infoUser["lastname"],
+                "role_level" => $infoUser["role_level"],
+                "photo_profile" => $infoUser["photo_profile"],
             ];
             LogsRegister("LOGIN SUCCESS", "Connection au compte : $email");
             header("Location: ../../../index.php");
