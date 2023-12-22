@@ -9,12 +9,10 @@ $stmt->execute();
 $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<script src="/node_modules/flowbite/dist/flowbite.min.js"></script>
-
 <div class="flex items-center justify-center table-auto">
     <div class="mt-6 bg-white px-6 py-5 w-11/12 rounded">
         <table class="w-full text-sm text-left text-gray-500">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+            <thead class="text-xs text-gray-700 uppercase border-b bg-gray-50">
             <tr>
                 <th scope="col" class="px-6 py-3">#</th>
                 <th scope="col" class="px-6 py-3">Nom de catégorie</th>
@@ -29,11 +27,8 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap">
                         <?= $categorie["category_id"] ?>
                     </th>
-                    <th class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap">
+                    <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                         <?= $categorie["category_name"] ?>
-                    </th>
-                    <th class="px-6 py-4 text-right">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Modifier</a>
                     </th>
                 </tr>
             <?php endforeach; ?>
