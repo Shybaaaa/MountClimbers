@@ -4,14 +4,15 @@ $title = "MountClimbers";
 global $db;
 
 if (!isset($_SESSION["user"])) {
-    header("Location: ../../../index.php");
+    header("Location: /public/pages/login/index.php");
 }
 
 $sql = "SELECT roles.role_name FROM roles WHERE roles.role_id = :role_level";
 $stmt = $db->prepare($sql);
 $stmt->execute([
-    'role_level' => $_SESSION["user"]["role_level"],
+    "role_level" => $_SESSION["user"]["role_level"],
 ]);
+
 $role = $stmt->fetch();
 ?>
 

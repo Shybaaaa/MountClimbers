@@ -76,8 +76,8 @@ $category_list = $stmt->fetchAll();
                     </div>
                     <div class="col-span-2 sm:col-span-1">
                         <label for="category" class="block mb-2 text-sm font-medium text-gray-900">Catégories</label>
-                        <select id="category"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5">
-                            <option value="null"></option>
+                        <select id="category" name="category"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5">
+                            <option value="null" ></option>
                             <?php foreach ($category_list as $key => $category_name): ?>
                                 <option value="<?= $category_name["category_name"]?>"><?= $category_name["category_name"]?></option>
                             <?php endforeach;?>
@@ -85,11 +85,11 @@ $category_list = $stmt->fetchAll();
                     </div>
                     <div class="col-span-2">
                         <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
-                        <textarea id="description" rows="4" minlength="50" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Ecrit la description du bien immobilier."></textarea>
+                        <textarea id="description" name="description" rows="4" minlength="50" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Ecrit la description du bien immobilier."></textarea>
                     </div>
                     <div class="col-span-2">
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="photo">Photo</label>
-                        <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none" aria-describedby="photo" id="photo" type="file">
+                        <input name="img" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none" aria-describedby="photo" id="photo" type="file">
                     </div>
                 </div>
                 <div class="flex flex-col items-center justify-center">
