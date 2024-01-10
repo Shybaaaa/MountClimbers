@@ -1,5 +1,4 @@
 <?php
-session_start();
 require "private/functions/dbIni.php";
 $title = "MountClimbers";
 

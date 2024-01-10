@@ -2,6 +2,10 @@
 require_once __DIR__ . "/dbIni.php";
 global $db;
 
+if (isset($_SESSION["user"])) {
+    header("Location: ../../../index.php");
+}
+
 $firstname = "";
 $lastname = "";
 $email = "";

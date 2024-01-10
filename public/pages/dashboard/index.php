@@ -199,6 +199,9 @@ $role = $stmt->fetch();
                         case "user":
                             echo "Utilisateurs";
                             break;
+                        case "editproduct":
+                            echo "Modification du produit - " . $_GET["ref"];
+                            break;
                         default:
                             echo "Informations";
                             break;
@@ -208,10 +211,16 @@ $role = $stmt->fetch();
                 }
                 ?>
             </h5>
-            <?php if (isset($_GET["page"])) {
+            <?php if(isset($_GET["page"])) {
                 switch ($_GET["page"]) {
-                    case "category" or "product":
-                        echo '<div class="flex space-x-4"><button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="text-gray-600 font-medium text-sm px-5 py-2.5 text-center" type="button"><svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer h-5 w-5 flex-shrink-0" fill="currentColor" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></button></div>';
+                    case "category" :
+                        echo '<div class="flex space-x-4"><button data-modal-target="create-modal" data-modal-toggle="create-modal" class="text-gray-600 font-medium text-sm px-5 py-2.5 text-center" type="button"><svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer h-5 w-5 flex-shrink-0" fill="currentColor" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></button></div>';
+                        break;
+                    case "product" :
+                        echo '<div class="flex space-x-4"><button data-modal-target="create-modal" data-modal-toggle="create-modal" class="text-gray-600 font-medium text-sm px-5 py-2.5 text-center" type="button"><svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer h-5 w-5 flex-shrink-0" fill="currentColor" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></button></div>';
+                        break;
+                    default:
+                        echo '<div class="flex space-x-4 opacity-0"><button class="text-gray-600 font-medium text-sm px-5 py-2.5 text-center" type="button"><svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer h-5 w-5 flex-shrink-0" fill="currentColor" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></button></div>';
                         break;
                 }
             } ?>
@@ -235,6 +244,9 @@ $role = $stmt->fetch();
                     break;
                 case "user":
                     require_once __DIR__ . "/user.php";
+                    break;
+                case "editproduct":
+                    require_once __DIR__ . "/editProduct.php";
                     break;
                 default:
                     require_once __DIR__ . "/info.php";
