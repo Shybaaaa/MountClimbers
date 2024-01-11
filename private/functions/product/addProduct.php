@@ -23,8 +23,9 @@ if (isset($_SESSION["user"])) {
         if ($isExist) {
             if (!$_FILES["photo"]["error"]) {
                 $folder_name = uniqid();
-                mkdir($_SERVER["DOCUMENT_ROOT"] . $target_dir . $folder_name);
+                mkdir(  $_SERVER["DOCUMENT_ROOT"] . $target_dir . $folder_name);
                 $target_file = $_SERVER["DOCUMENT_ROOT"] . $target_dir . $folder_name . "/" . basename($_FILES["photo"]["name"]);
+                $url_file = $target_dir . $folder_name . "/" . basename($_FILES["photo"]["name"]);
                 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
                 $check = getimagesize($_FILES["photo"]["tmp_name"]);
                 if ($check !== false) {
@@ -37,9 +38,12 @@ if (isset($_SESSION["user"])) {
                             $chaletName,
                             $chaletDesc,
                             $chaletPrice,
-                            $target_file,
+                            $url_file,
                             $chaletCategory,
                         ]);
+
+                        LogsRegister("PRODUCT_ADD", "Le produit $chaletName a été ajouté par " . $_SESSION["user"]["email"]);
+                        
                         header("Location: /public/pages/dashboard/index.php?page=product&success=1");
                     } else {
                         header("Location: /public/pages/dashboard/index.php?page=product&error=2");

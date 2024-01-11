@@ -1,7 +1,7 @@
 <footer class="mx-auto flex h-20 w-full items-center justify-around p-6 lg:px-8" aria-label="Global">
     <div class="flex lg:flex-1 justify-start text-center">
         <p class="text-sm font-bold leading-6 text-gray-900 align-middle"> © Tous les droits son réservé
-            à <?= $title ?></p>
+            à MountClimbers</p>
     </div>
     <div class="lg:flex lg:flex-1 lg:justify-end w-full">
         <a href="" class="w-16 h-auto hover:scale-105 transition duration-100 align-middle">
