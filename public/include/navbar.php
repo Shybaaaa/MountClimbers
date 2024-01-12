@@ -13,7 +13,7 @@
     <div class="hidden lg:flex lg:gap-x-12">
         <a href="/index.php" class="text-sm font-semibold leading-6 text-gray-900 hover:text-blue-500 hover:scale-105 transition">Accueil</a>
         <a href="/index.php?page=product" class="text-sm font-semibold leading-6 text-gray-900 hover:text-blue-500 hover:scale-105 transition">Produits</a>
-        <a href="" class="text-sm font-semibold leading-6 text-gray-900 hover:text-blue-500 hover:scale-105 transition">Contactez-nous</a>
+        <a href="/index.php?page=contact" class="text-sm font-semibold leading-6 text-gray-900 hover:text-blue-500 hover:scale-105 transition">Contactez-nous</a>
     </div>
 
     <!-- Conteneur de droite login / register -->

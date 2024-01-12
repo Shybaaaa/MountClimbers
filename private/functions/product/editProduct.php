@@ -51,19 +51,24 @@ if (isset($_SESSION["user"])) {
                         "product_ref" => $productRef,
                     ]);
 
+                    LogsRegister("PRODUCT_EDIT", "Le produit $nameUpdate a été modifié par " . $_SESSION["user"]["email"]);
                     header("Location: /public/pages/dashboard/index.php?page=product&product=$productRef&edit=success");
                 } else {
+                    LogsRegister("PRODUCT_EDIT", "Le produit $nameUpdate n'a pas pu être modifié par " . $_SESSION["user"]["email"]);
                     header("Location: /public/pages/dashboard/index.php?page=product&product=$productRef&edit=error1");
                 }
             } else {
+                LogsRegister("PRODUCT_EDIT", "Le produit $nameUpdate n'a pas pu être modifié par " . $_SESSION["user"]["email"]);
                 header("Location: /public/pages/dashboard/index.php?page=product&product=$productRef&edit=error2");
             }
 
         } else {
+            LogsRegister("PRODUCT_EDIT", "Le produit $nameUpdate n'a pas pu être modifié par " . $_SESSION["user"]["email"]);
             header("Location: /public/pages/dashboard/index.php?page=product&product=$productRef&edit=error3");
         }
 
     } else {
+        LogsRegister("PERMISSION_ERROR_PRODUCT", "Tentative de modification de produit par " . $_SESSION["user"]["email"] . " sans les permissions requises");
         header("Location: /public/pages/dashboard/index.php");
     }
 } else {

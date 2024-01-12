@@ -34,11 +34,11 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
             LogsRegister("LOGIN SUCCESS", "Connection au compte : $email");
             header("Location: ../../../index.php");
         } else {
-            header("Location: ./index.php?error=1");
             LogsRegister("LOGIN ERROR", "Erreur : Identifiants incorrect");
+            header("Location: ./index.php?error=1");
         }
     } else {
-        header("Location: ./index.php?error=2");
         LogsRegister("LOGIN ERROR", "Erreur : Mauvaise adresse email");
+        header("Location: ./index.php?error=2");
     }
 }

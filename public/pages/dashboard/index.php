@@ -25,6 +25,7 @@ $role = $stmt->fetch();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?= $title ?> - Tableau bord</title>
     <link rel="stylesheet" href="/public/css/output.css">
+    <link rel="shortcut icon" href="../../image/logo/favicon.ico" type="image/x-icon">
     <script src="/node_modules/flowbite/dist/flowbite.min.js"></script>
 </head>
 <body class="bg-gray-100 scroll-smooth">
@@ -83,6 +84,7 @@ $role = $stmt->fetch();
                     <span class="-mr-1 font-medium">Informations</span>
                 </a>
             </li>
+            <?php if ($_SESSION["user"]["role_level"] > 5): ?>
             <li>
                 <a href="index.php?page=category"
                    class="<?php if (isset($_GET["page"]) and $_GET["page"] == "category") {
@@ -164,6 +166,7 @@ $role = $stmt->fetch();
                     <span>Utilisateur</span>
                 </a>
             </li>
+            <?php endif; ?>
         </ul>
     </div>
     <div class="px-6 -mx-6 pt-4 flex justify-between items-center border-t">

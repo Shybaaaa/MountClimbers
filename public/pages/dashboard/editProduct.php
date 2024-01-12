@@ -1,5 +1,13 @@
 <?php
 
+require_once __DIR__ . "/../../../private/functions/dbIni.php";
+global $db;
+
+if ($_SESSION["user"]["role_level"] < 5) {
+    header("Location: index.php");
+    exit;
+}
+
 $productRef = $_GET['ref'];
 $sql = "SELECT * FROM products WHERE reference = '$productRef'";
 $stmt = $db->prepare($sql);

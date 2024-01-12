@@ -46,18 +46,23 @@ if (isset($_SESSION["user"])) {
                         
                         header("Location: /public/pages/dashboard/index.php?page=product&success=1");
                     } else {
+                        LogsRegister("PRODUCT_ADD", "Le produit $chaletName n'a pas pu être ajouté par " . $_SESSION["user"]["email"]);
                         header("Location: /public/pages/dashboard/index.php?page=product&error=2");
                     }
                 } else {
+                    LogsRegister("PRODUCT_ADD", "Le produit $chaletName n'a pas pu être ajouté par " . $_SESSION["user"]["email"]);
                     header("Location: /public/pages/dashboard/index.php?page=product&error=3");
                 }
             } else {
+                LogsRegister("PRODUCT_ADD", "Le produit $chaletName n'a pas pu être ajouté par " . $_SESSION["user"]["email"]);
                 header("Location: /public/pages/dashboard/index.php?page=product&error=4");
             }
         } else {
+            LogsRegister("PRODUCT_ADD", "Le produit $chaletName n'a pas pu être ajouté par " . $_SESSION["user"]["email"]);
             header("Location: /public/pages/dashboard/index.php?page=product&error=1");
         }
     } else {
+        LogsRegister("PERMISSION_ERROR_PRODUCT", "Tentative d'ajout de produit par " . $_SESSION["user"]["email"] . " sans les permissions requises");
         header("Location: /public/pages/dashboard/index.php?page=info");
     }
 } else {

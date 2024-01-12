@@ -2,15 +2,21 @@
 require_once __DIR__ . "/../../../private/functions/dbIni.php";
 global $db;
 
+
 $sql = "SELECT * FROM category";
 $stmt = $db->prepare($sql);
 $stmt->execute();
 
 $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+if ($_SESSION["user"]["role_level"] < 5) {
+    exit;
+}
+
 ?>
 
 <div class="flex items-center justify-center table-auto">
-    <div class="mt-6 bg-white px-6 py-5 w-11/12 rounded">
+    <div class="mt-6 bg-white w-11/12 rounded-lg">
         <table class="w-full text-sm text-left text-gray-500">
             <thead class="text-xs text-gray-700 uppercase border-b bg-gray-50">
             <tr>

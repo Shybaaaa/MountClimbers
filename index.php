@@ -21,21 +21,20 @@ global $db;
 <?php
 if (isset($_GET["page"])){
     switch ($_GET["page"]){
+        case "contact":
+            include __DIR__ . "/public/pages/contact.php";
+            break;
         case "product":
             include __DIR__ . "/public/pages/product/index.php";
             break;
         default:
-            include __DIR__ . "/public/include/home.php";
+            include __DIR__ . "/public/pages/home.php";
             break;
     }
 } else {
-    include __DIR__ . "/public/include/home.php";
+    include __DIR__ . "/public/pages/home.php";
 }
 ?>
-
-<!-- Faire une partie avec les derniers chalets. -->
-
-<!-- Refaire le footer -->
 
 <?php include "./public/include/footer.php" ?>
 </body>

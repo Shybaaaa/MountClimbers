@@ -2,6 +2,10 @@
 require_once __DIR__ . "/../../../private/functions/dbIni.php";
 global $db;
 
+if ($_SESSION["user"]["role_level"] < 5) {
+    exit();
+}
+
 
 $sql = "SELECT * FROM category";
 $stmt = $db->prepare($sql);
@@ -12,6 +16,7 @@ $category_list = $stmt->fetchAll();
 $product_list = $db->prepare("SELECT * FROM products");
 $product_list->execute();
 $product_list = $product_list->fetchAll();
+
 
 ?>
 
@@ -92,8 +97,8 @@ if (isset($_GET["edit"])){
 ?>
 
 <div class="flex items-center justify-center table-auto">
-    <div class="mt-6 bg-white px-3 py-4 w-11/12 rounded">
-        <table class="w-full rounded-2xl py-6 px-3 text-sm text-left text-gray-500">
+    <div class="mt-6 bg-white w-11/12">
+        <table class="w-full rounded-lg text-sm text-left text-gray-500">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                 <tr>
                     <th scope="col" class="px-6 py-3">#</th>
