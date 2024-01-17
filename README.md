@@ -2,7 +2,7 @@
 
 <br>
 
-🇫🇷 **Français :** 
+## 🇫🇷 **Français :** 
 
 <br>
 
@@ -31,22 +31,3 @@ npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
 ```
 
 <br>
-
-🇬🇧 **English :**
-
-Site dedicated to chalet rentals, developed as part of programming courses.
-
-Utilization of various languages:
-- PHP
-- HTML
-- CSS
-- JS
-
-For CSS, integration of the Tailwind CSS framework, and use of a Flowbite script for modals and alerts in JS.
-
----
-
-To customize Tailwind CSS, run the following command in your terminal:
-```bash
-npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
-```
