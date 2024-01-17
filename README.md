@@ -1,9 +1,18 @@
-# galery_site
+# MountClimbers
 
-Site Galery pour le cours
+Site dédié à la location de chalets, développé dans le cadre de cours de programmation.
 
-Pour modifier le tailwind
+Utilisation de plusieurs langages :
+- PHP
+- HTML
+- CSS
+- JS
 
-```cmd
-npx tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch
+Pour le CSS, intégration du framework Tailwind CSS, et utilisation d'un script Flowbite pour les modals et les alertes en JS.
+
+---
+
+Pour personnaliser Tailwind CSS, exécutez la commande suivante dans votre terminal :
+```bash
+npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
 ```
